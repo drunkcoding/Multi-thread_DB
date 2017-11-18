@@ -1,0 +1,46 @@
+#link file
+*.o
+
+#static lib
+*.a
+
+#exceutable file
+p2
+
+#local sample directory
+sample/*
+db/*
+
+#cmake dir remove
+.idea/modules.xml
+.idea/p2.iml
+.idea/workspace.xml
+#CMakeLists.txt
+cmake-build-debug/CMakeCache.txt
+cmake-build-debug/CMakeFiles/3.9.4/
+cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake
+cmake-build-debug/CMakeFiles/CMakeError.log
+cmake-build-debug/CMakeFiles/CMakeOutput.log
+cmake-build-debug/CMakeFiles/CMakeTmp/
+cmake-build-debug/CMakeFiles/Makefile.cmake
+cmake-build-debug/CMakeFiles/Makefile2
+cmake-build-debug/CMakeFiles/TargetDirectories.txt
+cmake-build-debug/CMakeFiles/clion-environment.txt
+cmake-build-debug/CMakeFiles/clion-log.txt
+cmake-build-debug/CMakeFiles/cmake.check_cache
+cmake-build-debug/CMakeFiles/feature_tests.bin
+cmake-build-debug/CMakeFiles/feature_tests.c
+cmake-build-debug/CMakeFiles/feature_tests.cxx
+cmake-build-debug/CMakeFiles/p2.dir/CXX.includecache
+cmake-build-debug/CMakeFiles/p2.dir/DependInfo.cmake
+cmake-build-debug/CMakeFiles/p2.dir/build.make
+cmake-build-debug/CMakeFiles/p2.dir/cmake_clean.cmake
+cmake-build-debug/CMakeFiles/p2.dir/depend.internal
+cmake-build-debug/CMakeFiles/p2.dir/depend.make
+cmake-build-debug/CMakeFiles/p2.dir/flags.make
+cmake-build-debug/CMakeFiles/p2.dir/link.txt
+cmake-build-debug/CMakeFiles/p2.dir/progress.make
+cmake-build-debug/CMakeFiles/progress.marks
+cmake-build-debug/Makefile
+cmake-build-debug/cmake_install.cmake
+cmake-build-debug/p2.cbp
