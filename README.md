@@ -32,7 +32,7 @@ We implement the methods in the derived classes, like `CopyTableQuery`, `SumQuer
 
 The threads are designed in the structure of
 
-```
+```text
 +-----------------------------------+    ...    +-----------------------------------+       |
 |              table 1              |           |              table n              |       |
 +-----------------------------------+           +-----------------------------------+       | t
@@ -65,7 +65,7 @@ vector<thread*> waitThreadsSecondPtr = vector<thread*>(); // only for COPYTABLE
 
  to class `Query`. We assign the value to the attribute(s) in `main` function before every thread is `new`ed. A new thread will join all the threads in the two vectors before executing (see function `executeAndPrint` in `query.h`). 
 
-###Output strategy & implementation
+### Output strategy & implementation
 
 We choose the strategy to read in all the queries, then output all the results, so it is not same as previous `lemondb`'s immediate response. 
 
@@ -79,7 +79,7 @@ In the real testing environment, the machine may complain `Temporary resource un
 
 Go through `thread_vector` to join all the threads, go through `output_list` to finish output. By checking the `thread_vector`'s threads' job, we go pass or join them in case the output is still unavailable.
 
-##Make Method
+## Make Method
 
 Please compile the whole program with `make` or `make re`. 
 
@@ -128,4 +128,3 @@ In single table read-and-write-mixed or write-only test cases, the time elapsed 
 
 - In single table read-and-write-mixed or write-only test cases, the time elapsed is even more than the original `lemondb`. The performance can be improved by improving the multi-threading strategy: use *fields* as the operating unit instead of *tables*. That is, a thread is put into a new concurrent group if and only if 1. the fields that the thread will read are modified by the current concurrent group, or 2. the fields that the thread will modify are read or modified by the current concurrent group. Due to time limitation, we haven't implemented the new strategy correctly. 
 - We output all the information at the same time after all the queries are read. This is not feasible in reality. We can try a different output strategy: create a thread for outputting. The thread is responsible for checking whether a query is completed. If completed, then print the information, and check whether the next query is completed. 
-
